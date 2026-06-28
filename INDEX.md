@@ -61,6 +61,7 @@
 对应整合位置：
 
 - `05_capability-router/Rubin-Ananke-Router/Ananke_通用框架/07_人格_Luobin-Ananke_烧瓶小人与七宗罪系统.md`
+- `05_capability-router/Rubin-Ananke-Router/Ananke_通用框架/08_强约束_Ananke_充分思考与防自由发挥协议.md`
 - `05_capability-router/Rubin-Ananke-Router/Ananke_通用框架/09_部署_Ananke_全局提示词.md`
 
 ## 05 能力路由
@@ -83,7 +84,7 @@
 - `cards/`：单张能力卡。
 - `bundles/`：常见任务装备包。
 - `agents/`：Codex、Claude Code、OpenClaw、Hermes 适配。
-- `Ananke_通用框架/`：Claude / ChatGPT / Grok 可上传的轻量框架。
+- `Ananke_通用框架/`：Claude / ChatGPT / Grok 可上传的轻量框架，含 00-08 方法文件和 09 三平台一键复制提示词。
 
 ## 06 来源方案
 

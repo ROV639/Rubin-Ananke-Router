@@ -113,7 +113,7 @@
 - `bundles/`：6 个。
 - `agents/`：4 个，含 Codex / Claude Code / OpenClaw / Hermes。
 - `cards/`：28 张。
-- `Ananke_通用框架/`：README + 00-07 + 09，10 个文件。
+- `Ananke_通用框架/`：README + 00-09，11 个文件，其中 08 是强约束防自由发挥协议。
 
 本地源目录同步测试：
 
@@ -224,9 +224,9 @@ Bundle 引用检查：
 - 把 `investment-thesis-check` 接入 `investment-serious-analysis` bundle。
 - 把 `minimax-media`、`finish-branch` 等补入 `00_DECK_INDEX.md` P1，避免孤儿卡不可发现。
 - 修复 `debug-loop`、`finish-branch`、`investment-thesis-check`、`seven-sins-diagnosis` 的相对路径死链。
-- 修复 `Ananke_通用框架/03_路由` 的笔误：`账号/项目吊死` → `账号/项目去留判断`。
+- 修复 `Ananke_通用框架/03_路由` 的旧笔误，统一为 `账号/项目去留判断`。
 - 在 `Ananke_通用框架/01_必读` 增加 Serenity 三档与 Ananke 四档的置信度合并规则。
-- 同步 `09_部署` 的 textarea 复制区和纯文本备用区，防止同文件双写漂移。
+- `09_部署` 旧版曾做双复制块同步；现已改为 Claude / ChatGPT / Grok 三个平台各自独立的一键复制区，避免同内容双写漂移。
 - 在 `07_人格` 增加原始 spec vs 压缩版对照表，明确哪些内容保留、压缩或转给 Router。
 - 在 `one-spark-framework` 和 `91_SOURCE_AUDIT` 明确区分 `ONE_SPARK_交友Hooks内容系统` 与历史 `/Users/robin/AltmanCodex/ONE_SPARK` 社媒巡航研究。
 - 新增 `92_ANANKE_REPLAY_TESTS.md`，覆盖 7 个 Ananke/Luobin-Ananke 回放场景。
@@ -244,13 +244,16 @@ STAGING_FULL_TEST_OK
 cards: 28
 referenced_cards: 28
 orphans: []
-textarea_chars: 4167
-plain_chars: 4167
+Ananke files: 11
+copy_blocks: 3
+Claude copy block chars: 3373
+ChatGPT copy block chars: 3383
+Grok copy block chars: 3300
 ```
 
 仍需人工验证：
 
-- ChatGPT / Claude / Grok 项目指令字段的真实字符上限仍需在对应产品里手动试填；本仓库已区分完整版项目指令与 Custom Instructions 短版建议。
+- ChatGPT / Claude / Grok 项目指令字段的真实字符上限仍需在对应产品里手动试填；当前建议优先放 Project instructions，不建议塞进普通 Custom Instructions。
 - `92_ANANKE_REPLAY_TESTS.md` 是回放测试规格，尚未让真实 AI 工具逐条生成输出并人工评分。
 
 ## 总结
@@ -258,3 +261,47 @@ plain_chars: 4167
 本轮检查不是只看文件存在；已经按外部访问、根入口、五大核心系统、Router 引用、6 个真实任务场景、Ananke 人格承接、media-tools 入口逐项测试。
 
 当前结论：仓库可以交给其他人或其他 Agent 检查。
+
+## 2026-06-29 追加：Ananke 通用框架重新架构
+
+触发原因：
+
+- Robin 指出 `00/01/03/05` 主要是在写要求，没有解释“为什么这样判断、每一步逻辑是什么”。
+- 原 `09_部署` 是单一全局提示词，不适合 Claude / ChatGPT / Grok 不同工具的使用差异。
+- 需要更强约束，防止大模型只看字面、自由发挥、没充分思考就输出审判口吻。
+
+修复项：
+
+- 重写 `00_总纲`：补入思想锚点和完整推理链 `对象澄清 -> 事实分层 -> 代价计算 -> 偏差识别 -> 反证挑战 -> 行动落点`。
+- 重写 `01_必读`：把判断公式、证据层级、置信度降级规则、Serenity 合并规则写清楚。
+- 重写 `03_路由`：从关键词触发改为任务意图、对象清晰度、证据状态、后果重量四变量路由。
+- 重写 `05_模板`：补每个字段为什么存在，防止模板被当普通填空。
+- 新增 `08_强约束_Ananke_充分思考与防自由发挥协议.md`：约束跳读、自由发挥、信息不足硬判、七宗罪人格攻击。
+- 重构 `09_部署`：改成 Claude / ChatGPT / Grok 三个独立一键复制区，每个复制区可单独工作，不需要拼接多段。
+- 修正 `04_卡组` 一处冲突口径：反证不会自动提高置信度；没反证的重大判断必须降级。
+
+补测结果：
+
+```text
+ANANKE_LOCAL_TEST_OK
+ANANKE_SOURCE_STAGING_TEST_OK
+Ananke files: 11
+Claude copy block chars: 3373
+ChatGPT copy block chars: 3383
+Grok copy block chars: 3300
+copy blocks: 3
+```
+
+测试覆盖：
+
+- `README` 是否列出 `08_强约束` 和三平台部署口径。
+- `00/01/03/05` 是否包含思想锚点、推理链、路由变量、字段逻辑。
+- `09_部署` 是否有 Claude / ChatGPT / Grok 三个独立复制区。
+- 每个复制区是否包含：身份、推理链、启用条件、五面镜头、证据层级、置信度、七宗罪、回答前强制检查、输出模板、信息不足模板、失败输出识别、平台专用约束。
+- 是否清除旧的 `textarea + plain` 双写复制口径。
+- 是否仍残留旧的“反证自动提高置信度”、旧笔误等冲突文本。
+
+仍需人工验证：
+
+- 需要把 `92_ANANKE_REPLAY_TESTS.md` 的 7 个场景分别交给 Claude / ChatGPT / Grok 实跑并评分。
+- 需要确认三个平台项目指令字段的真实长度限制；当前复制区约 3.3k 字符，普通 Custom Instructions 可能仍不适合，优先 Project instructions。
