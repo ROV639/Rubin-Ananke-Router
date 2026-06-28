@@ -1,0 +1,17 @@
+{
+  "skill_name": "serenity-brainstorm",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "分析 @Serenity_qf 最近关于半导体光互连/CPO/存储周期的判断可信吗。",
+      "expected_output": "走推理模式，先采集或引用原始材料，再用 x-grok-build 与 api-search/web 独立来源做 2-verify，输出每个 claim 的状态、来源三角、反向证据、confidence 和 disclosure。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "找一个 AI 视频工具格局相关的内容方向，要求能发到小红书或抖音。",
+      "expected_output": "走执行模式，用 X/live discussion 和 web 独立来源验证论据，输出反差点、证据路径、发布建议、互动预案、变现指向，不把单一来源标为已证实。",
+      "files": []
+    }
+  ]
+}
