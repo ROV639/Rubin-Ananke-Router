@@ -36,7 +36,7 @@
 发现并修正：
 
 - 首次上架时 README 和 OPERATIONS 写的是“默认 private”。Robin 要求公开后，这个状态已过期。
-- 已改为：当前 public 供检查，检查完成后可再改回 private。
+- 已改为：当前 public 供检查和后续维护；如后续纳入敏感配置或未脱敏材料，再单独评估是否改回 private。
 
 ## 五大核心系统测试
 
@@ -213,7 +213,7 @@ Bundle 引用检查：
 - `Ananke_通用框架` 还需要真实对话样本测试，确认不会退化成毒舌表演。
 - `serenity-brainstorm` 的投资/市场分析需要联网或一手材料，不能只在本仓库离线测试。
 - OpenClaw / Hermes adapter 的真实运行效果，需要在对应运行环境里再跑一次。
-- 检查完成后，如果 Robin 要恢复私有，应把仓库 visibility 改回 private。
+- 当前按公开仓库维护；如果后续加入敏感配置、未脱敏路径或不宜公开的内部材料，再评估是否把仓库 visibility 改回 private。
 
 ## 2026-06-29 追加修复与补测
 
