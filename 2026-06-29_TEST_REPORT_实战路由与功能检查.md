@@ -115,6 +115,14 @@
 - `cards/`：28 张。
 - `Ananke_通用框架/`：README + 00-07 + 09，10 个文件。
 
+本地源目录同步测试：
+
+- 源目录：`/Users/robin/Rubin-Studio/✨Brainstorm - Agent🧵/04_参考与引用/Rubin-Ananke-Router`
+- GitHub staging 对应目录：`05_capability-router/Rubin-Ananke-Router`
+- 两边 Markdown 内容已对齐。
+- `diff -qr` 唯一差异：本地源目录存在 `.DS_Store`，属于系统噪音，未进入 GitHub。
+- 已在本地源目录单独跑同一套 Router 完整性、任务路由、Ananke 人格整合测试，结果通过。
+
 Bundle 引用检查：
 
 - `ananke-decision-review`：全部 card 命中。
