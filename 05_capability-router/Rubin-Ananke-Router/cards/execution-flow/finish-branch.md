@@ -10,7 +10,7 @@
 
 - `_System/superpowers` 下的 finishing-a-development-branch 流程（位置：Brainstorm `_System/superpowers/` 或 Codex plugin `openai-curated/superpowers/`）
 - 当前项目的 Git 工作流约定（主分支策略、PR 模板、commit 规范）
-- `../cards/verification-handoff/current-memory-writeback.md`（收尾必装）
+- `../verification-handoff/current-memory-writeback.md`（收尾必装）
 
 ## 执行动作
 

@@ -11,6 +11,7 @@
 ```text
 project-handoff
 plan-before-execute
+debug-loop
 secret-redaction
 verification-before-finish
 current-memory-writeback
@@ -31,4 +32,3 @@ current-memory-writeback
 ## 回写要求
 
 把根因、修复动作、验证证据、未处理风险写入报告或 CURRENT。
-

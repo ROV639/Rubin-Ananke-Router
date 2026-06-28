@@ -11,6 +11,7 @@
 ```text
 clarification-gate
 ananke-lens
+seven-sins-diagnosis
 counterargument-check
 verification-before-finish
 ```
@@ -29,4 +30,3 @@ verification-before-finish
 ## 回写要求
 
 若产出可复用诊断模板，同步到 `Ananke_通用框架` 或候选记忆。
-

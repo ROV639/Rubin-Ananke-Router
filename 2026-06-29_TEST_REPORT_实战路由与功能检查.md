@@ -215,6 +215,44 @@ Bundle 引用检查：
 - OpenClaw / Hermes adapter 的真实运行效果，需要在对应运行环境里再跑一次。
 - 检查完成后，如果 Robin 要恢复私有，应把仓库 visibility 改回 private。
 
+## 2026-06-29 追加修复与补测
+
+修复项：
+
+- 把 `debug-loop` 接入 `system-debugging` bundle。
+- 把 `seven-sins-diagnosis` 接入 `ananke-decision-review` bundle。
+- 把 `investment-thesis-check` 接入 `investment-serious-analysis` bundle。
+- 把 `minimax-media`、`finish-branch` 等补入 `00_DECK_INDEX.md` P1，避免孤儿卡不可发现。
+- 修复 `debug-loop`、`finish-branch`、`investment-thesis-check`、`seven-sins-diagnosis` 的相对路径死链。
+- 修复 `Ananke_通用框架/03_路由` 的笔误：`账号/项目吊死` → `账号/项目去留判断`。
+- 在 `Ananke_通用框架/01_必读` 增加 Serenity 三档与 Ananke 四档的置信度合并规则。
+- 同步 `09_部署` 的 textarea 复制区和纯文本备用区，防止同文件双写漂移。
+- 在 `07_人格` 增加原始 spec vs 压缩版对照表，明确哪些内容保留、压缩或转给 Router。
+- 在 `one-spark-framework` 和 `91_SOURCE_AUDIT` 明确区分 `ONE_SPARK_交友Hooks内容系统` 与历史 `/Users/robin/AltmanCodex/ONE_SPARK` 社媒巡航研究。
+- 新增 `92_ANANKE_REPLAY_TESTS.md`，覆盖 7 个 Ananke/Luobin-Ananke 回放场景。
+
+补测项：
+
+- 本地源目录先跑完整测试，再同步 staging。
+- 测试覆盖：bundle 引用、Deck P0/P1、orphan card、相对路径死链、Ananke 复制区一致性、人格关键词、自检项、ONE_SPARK 误装备防护。
+
+最终测试结果：
+
+```text
+LOCAL_SOURCE_FULL_TEST_OK
+STAGING_FULL_TEST_OK
+cards: 28
+referenced_cards: 28
+orphans: []
+textarea_chars: 4167
+plain_chars: 4167
+```
+
+仍需人工验证：
+
+- ChatGPT / Claude / Grok 项目指令字段的真实字符上限仍需在对应产品里手动试填；本仓库已区分完整版项目指令与 Custom Instructions 短版建议。
+- `92_ANANKE_REPLAY_TESTS.md` 是回放测试规格，尚未让真实 AI 工具逐条生成输出并人工评分。
+
 ## 总结
 
 本轮检查不是只看文件存在；已经按外部访问、根入口、五大核心系统、Router 引用、6 个真实任务场景、Ananke 人格承接、media-tools 入口逐项测试。

@@ -44,6 +44,7 @@
 - Grok 草案前文的 `80+ voices / 28 languages` 已被文件末尾校核推翻；当前只把 `eve/ara/rex/sal/leo` 与 `20 languages` 作为已校核口径，仍需以正式 skill 和当前官方能力复核。
 - Grok 草案中的直接 `curl https://api.x.ai/v1/tts` 路线需要 xAI API Key；Robin 当前已验证路径是 Hermes OAuth -> `x-grok-build`，不要照前文 curl 当可执行入口。
 - ONE_SPARK 旧名“城市松弛感”和 Classic Neg 已废，当前以 `ONE SPARK` 与 `Classic Chrome` 为准。
+- `ONE_SPARK_交友Hooks内容系统/` 与历史 `/Users/robin/AltmanCodex/ONE_SPARK` 不是同一个路由语境：前者是交友 Hooks / 私人号文案 / Classic Chrome 内容系统；后者在 memory verification 中出现为社媒巡航、浏览器状态、账号体检、Skill 引入研究。Router 的 `one-spark-framework` card 只指向前者，不能因看到 `ONE_SPARK` 四个字就装备交友文案流水线。
 - ONE_SPARK `00_index.md`、`M1_persona.md`、`M5_platforms.md` 存在少量编码乱码字符；不影响 Router，后续维护 ONE_SPARK 时可顺手修正文案。
 - ROVxEVE `08_部署_ROVxEVE_项目提示词ChatGPT.md` 的知识库清单里 `00/01/02/03` 出现重复条目；不影响本 Router，但后续维护 ROVxEVE 时应清理。
 - ROVxEVE `01_必读_ROVxEVE_总规则选题与系列规划.md` 正文标题残留 `07_CORE_...`，应视为旧标题残留，不改变当前文件名的路由地位。

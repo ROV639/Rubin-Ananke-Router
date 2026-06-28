@@ -43,7 +43,12 @@
 - `counterargument-check`
 - `plan-before-execute`
 - `browser-control`
+- `debug-loop`
+- `finish-branch`
+- `investment-thesis-check`
+- `minimax-media`
 - `publish-confirm`
+- `seven-sins-diagnosis`
 - `file-delivered-check`
 - `preview-qc-check`
 - `publish-status-check`
@@ -54,4 +59,3 @@
 2. bundle 中列出的 cards 只读必要项。
 3. card 中列出的原始来源按需读取。
 4. 旧草案、archive、candidate 只作背景，不作执行规则。
-

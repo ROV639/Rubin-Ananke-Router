@@ -10,7 +10,7 @@
 
 - `_System/superpowers` 下的 debugging / systematic-debugging / root-cause-tracing 流程（位置：Brainstorm `_System/superpowers/` 或 Codex plugin `openai-curated/superpowers/`）
 - 当前项目 `AGENTS.md` 故障处理约定
-- `../bundles/system-debugging.md`（协同 bundle）
+- `../../bundles/system-debugging.md`（协同 bundle）
 
 ## 执行动作
 

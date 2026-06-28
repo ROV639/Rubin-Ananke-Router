@@ -12,6 +12,7 @@
 rubin-memory
 search-router
 serenity-verify
+investment-thesis-check
 counterargument-check
 ananke-lens
 verification-before-finish
@@ -33,4 +34,3 @@ verification-before-finish
 ## 回写要求
 
 如果形成长期判断框架，写入 `memory-inbox`，不要直接改 core consensus。
-

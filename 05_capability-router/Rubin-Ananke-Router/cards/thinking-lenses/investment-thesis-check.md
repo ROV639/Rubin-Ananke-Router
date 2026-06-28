@@ -9,7 +9,7 @@
 ## 必读来源
 
 - `serenity-brainstorm` 框架（`~/.codex/skills/serenity-brainstorm/`、`~/.agents/skills/serenity-brainstorm/`）
-- `../bundles/investment-serious-analysis.md`（必装 bundle）
+- `../../bundles/investment-serious-analysis.md`（必装 bundle）
 - `serenity-verify` card + `counterargument-check` card + `ananke-lens` card（必装三件套）
 - 项目 `CURRENT.md` 里的 Robin 当前持仓与禁区
 
