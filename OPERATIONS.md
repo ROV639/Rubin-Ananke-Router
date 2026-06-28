@@ -45,7 +45,7 @@
 
 ## 上架原则
 
-- 默认创建私有 GitHub 仓库。
+- 首次创建时为 private；2026-06-29 按 Robin 要求改为 public，方便外部检查。检查完成后可再改回 private。
 - 保留来源和 provenance，不把 Claude / Codex / 第三方 skill 的资料伪装成原创。
 - 不上传 `.DS_Store`、`__pycache__`、`.pyc`、`node_modules`、`.env`、key、token、构建产物。
 - 上传前执行敏感信息扫描；发现疑似 secret 必须脱敏处理或确认是假阳性。
